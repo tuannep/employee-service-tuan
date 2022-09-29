@@ -19,8 +19,7 @@ public class EmployeeRepository {
 	public Employee findById(Long id) {
 		return employees.stream()
 				.filter(a -> a.getId().equals(id))
-				.findFirst()
-				.orElseThrow();
+				.findFirst().orElseThrow(() -> new IllegalArgumentException("No class found"));
 	}
 	
 	public List<Employee> findAll() {
