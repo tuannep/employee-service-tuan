@@ -2,4 +2,6 @@ spring:
   application:
     name: employee-service
   profiles:
-    active: local
+    active: heroku
+  config:
+    import: "optional:configserver:https://config-service-tuan.herokuapp.com"
